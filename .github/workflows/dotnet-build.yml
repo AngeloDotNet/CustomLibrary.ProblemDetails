@@ -1,0 +1,41 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  NET_VERSION: '6.x'
+  PROJECT_NAME: src/CustomLibrary.ProblemDetails
+  PROJECT_FILE: CustomLibrary.ProblemDetails.csproj
+  RELEASE_NAME: CustomLibrary.ProblemDetails
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with: 
+        fetch-depth: 0
+        
+    - name: Setup .NET 6.x
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build '${{ env.PROJECT_NAME }}/${{ env.PROJECT_FILE }}' --configuration Release --no-restore
+      
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    
