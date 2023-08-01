@@ -30,14 +30,14 @@ This library is an ad hoc code customization used in my private/work projects th
 
       if (person == null)
       {
-        throw new NotFoundException($"Person with id {id} not found");
+        throw new CustomLibrary.ProblemDetails.Exception.NotFoundException($"Person with id {id} not found");
       }
 
-      return Ok(new ConfirmResponse(person));
+      return Ok(new CustomLibrary.ProblemDetails.Response.Confirm(person));
     }
     catch (NotFoundException exc)
     {
-      return ExceptionResponse.NotFound(HttpContext, exc);
+      return CustomLibrary.ProblemDetails.Response.NotFound(HttpContext, exc);
     }
   }
 ```
@@ -46,21 +46,21 @@ This library is an ad hoc code customization used in my private/work projects th
 
 | Status Codes | Exception | Exception Response | |
 | --- | --- | --- | --- |
-| 304 | NotModifiedException | ExceptionResponse.NotModified | coming soon |
-| 400 | BadRequestException | ExceptionResponse.BadRequest | coming soon |
-| 401 | UnauthorizedException | ExceptionResponse.Unauthorized | coming soon |
-| 403 | ForbiddenException | ExceptionResponse.Forbidden | coming soon |
-| 404 | NotFoundException | ExceptionResponse.NotFound | coming soon |
-| 405 | NotAllowedException | ExceptionResponse.MethodNotAllowed | coming soon |
-| 406 | NotAcceptableException | ExceptionResponse.NotAcceptable | coming soon |
-| 408 | RequestTimeoutException | ExceptionResponse.RequestTimeout | coming soon |
-| 409 | ConflictException | ExceptionResponse.Conflict | coming soon |
-| 422 | UnprocessableEntityException | ExceptionResponse.UnprocessableEntity | coming soon |
-| 500 | InternalServerErrorException | ExceptionResponse.InternalServerError | coming soon |
-| 501 | NotImplementedException | ExceptionResponse.NotImplemented | coming soon |
-| 502 | BadGatewayException | ExceptionResponse.BadGateway | coming soon |
-| 503 | ServiceUnavailableException | ExceptionResponse.ServiceUnavailable | coming soon |
-| 504 | GatewayTimeoutException | ExceptionResponse.GatewayTimeout | coming soon |
+| 304 | Exception.NotModifiedException | Response.NotModified | coming soon |
+| 400 | Exception.BadRequestException | Response.BadRequest | coming soon |
+| 401 | Exception.UnauthorizedException | Response.Unauthorized | coming soon |
+| 403 | Exception.ForbiddenException | Response.Forbidden | coming soon |
+| 404 | Exception.NotFoundException | Response.NotFound | coming soon |
+| 405 | Exception.NotAllowedException | Response.MethodNotAllowed | coming soon |
+| 406 | Exception.NotAcceptableException | Response.NotAcceptable | coming soon |
+| 408 | Exception.RequestTimeoutException | Response.RequestTimeout | coming soon |
+| 409 | Exception.ConflictException | Response.Conflict | coming soon |
+| 422 | Exception.UnprocessableEntityException | Response.UnprocessableEntity | coming soon |
+| 500 | Exception.InternalServerErrorException | Response.InternalServerError | coming soon |
+| 501 | Exception.NotImplementedException | Response.NotImplemented | coming soon |
+| 502 | Exception.BadGatewayException | Response.BadGateway | coming soon |
+| 503 | Exception.ServiceUnavailableException | Response.ServiceUnavailable | coming soon |
+| 504 | Exception.GatewayTimeoutException | Response.GatewayTimeout | coming soon |
 
 ## Contributing
 
