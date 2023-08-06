@@ -46,7 +46,7 @@ This library is an ad hoc code customization used in my private/work projects th
 
 | Status Codes | Exception | Exception Response | |
 | --- | --- | --- | --- |
-| 304 | Exception.NotModifiedException | Response.NotModified | coming soon |
+| 304 | Exception.NotModifiedException | Response.NotModified | available |
 | 400 | Exception.BadRequestException | Response.BadRequest | coming soon |
 | 401 | Exception.UnauthorizedException | Response.Unauthorized | coming soon |
 | 403 | Exception.ForbiddenException | Response.Forbidden | coming soon |
