@@ -4,8 +4,6 @@ Collection of tools related to problem management (exceptions) that can be gener
 
 This library is an ad hoc code customization used in my private/work projects thus avoiding the duplication of repetitive code.
 
-[![GitHub License](https://img.shields.io/github/license/AngeloDotNet/CustomLibrary.ProblemDetails?style=for-the-badge)](https://github.com/AngeloDotNet/CustomLibrary.ProblemDetails/blob/main/LICENSE)
-
 ## Configuration in ConfigureServices in Startup.cs
 
 ```csharp
@@ -47,7 +45,7 @@ This library is an ad hoc code customization used in my private/work projects th
 | Status Codes | Exception | Exception Response | |
 | --- | --- | --- | --- |
 | 304 | Exception.NotModifiedException | Response.NotModified | available |
-| 400 | Exception.BadRequestException | Response.BadRequest | coming soon |
+| 400 | Exception.BadRequestException | Response.BadRequest | available |
 | 401 | Exception.UnauthorizedException | Response.Unauthorized | coming soon |
 | 403 | Exception.ForbiddenException | Response.Forbidden | coming soon |
 | 404 | Exception.NotFoundException | Response.NotFound | coming soon |
@@ -65,3 +63,7 @@ This library is an ad hoc code customization used in my private/work projects th
 ## Contributing
 
 Contributions and/or suggestions are always welcome.
+
+## License
+
+[![GitHub License](https://img.shields.io/github/license/AngeloDotNet/CustomLibrary.ProblemDetails?style=for-the-badge)](https://github.com/AngeloDotNet/CustomLibrary.ProblemDetails/blob/main/LICENSE)
