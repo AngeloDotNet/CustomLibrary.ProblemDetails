@@ -45,4 +45,26 @@ public static class Response
 
         return result;
     }
+
+    public static ObjectResult Unauthorized(HttpContext httpContext, System.Exception exc)
+    {
+        var statusCode = StatusCodes.Status401Unauthorized;
+        var problemDetails = new CustomProblemDetails
+        {
+            Status = statusCode,
+            Type = $"https://httpstatuses.com/{statusCode}",
+            Instance = httpContext.Request.Path,
+            Title = "Unauthorized"
+        };
+
+        problemDetails.Extensions.Add("traceId", Activity.Current?.Id ?? httpContext.TraceIdentifier);
+        problemDetails.Extensions.Add("errors", exc.Message);
+
+        var result = new ObjectResult(problemDetails)
+        {
+            StatusCode = statusCode
+        };
+
+        return result;
+    }
 }
