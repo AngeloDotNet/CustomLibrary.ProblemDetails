@@ -47,7 +47,7 @@ This library is an ad hoc code customization used in my private/work projects th
 | 304 | Exception.NotModifiedException | Response.NotModified | available |
 | 400 | Exception.BadRequestException | Response.BadRequest | available |
 | 401 | Exception.UnauthorizedException | Response.Unauthorized | available |
-| 403 | Exception.ForbiddenException | Response.Forbidden | coming soon |
+| 403 | Exception.ForbiddenException | Response.Forbidden | available |
 | 404 | Exception.NotFoundException | Response.NotFound | coming soon |
 | 405 | Exception.NotAllowedException | Response.MethodNotAllowed | coming soon |
 | 406 | Exception.NotAcceptableException | Response.NotAcceptable | coming soon |
