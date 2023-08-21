@@ -111,4 +111,26 @@ public static class Response
 
         return result;
     }
+
+    public static ObjectResult MethodNotAllowed(HttpContext httpContext, System.Exception exc)
+    {
+        var statusCode = StatusCodes.Status405MethodNotAllowed;
+        var problemDetails = new CustomProblemDetails
+        {
+            Status = statusCode,
+            Type = $"https://httpstatuses.com/{statusCode}",
+            Instance = httpContext.Request.Path,
+            Title = "MethodNotAllowed"
+        };
+
+        problemDetails.Extensions.Add("traceId", Activity.Current?.Id ?? httpContext.TraceIdentifier);
+        problemDetails.Extensions.Add("errors", exc.Message);
+
+        var result = new ObjectResult(problemDetails)
+        {
+            StatusCode = statusCode
+        };
+
+        return result;
+    }
 }
