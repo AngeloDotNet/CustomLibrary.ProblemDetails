@@ -49,7 +49,7 @@ This library is an ad hoc code customization used in my private/work projects th
 | 401 | Exception.UnauthorizedException | Response.Unauthorized | available |
 | 403 | Exception.ForbiddenException | Response.Forbidden | available |
 | 404 | Exception.NotFoundException | Response.NotFound | available |
-| 405 | Exception.NotAllowedException | Response.MethodNotAllowed | coming soon |
+| 405 | Exception.NotAllowedException | Response.MethodNotAllowed | available |
 | 406 | Exception.NotAcceptableException | Response.NotAcceptable | coming soon |
 | 408 | Exception.RequestTimeoutException | Response.RequestTimeout | coming soon |
 | 409 | Exception.ConflictException | Response.Conflict | coming soon |
