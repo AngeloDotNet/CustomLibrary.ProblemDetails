@@ -52,7 +52,7 @@ This library is an ad hoc code customization used in my private/work projects th
 | 405 | Exception.NotAllowedException | Response.MethodNotAllowed | available |
 | 406 | Exception.NotAcceptableException | Response.NotAcceptable | available |
 | 408 | Exception.RequestTimeoutException | Response.RequestTimeout | available |
-| 409 | Exception.ConflictException | Response.Conflict | coming soon |
+| 409 | Exception.ConflictException | Response.Conflict | available |
 | 422 | Exception.UnprocessableEntityException | Response.UnprocessableEntity | coming soon |
 | 500 | Exception.InternalServerErrorException | Response.InternalServerError | coming soon |
 | 501 | Exception.NotImplementedException | Response.NotImplemented | coming soon |
