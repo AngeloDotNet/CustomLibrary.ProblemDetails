@@ -53,7 +53,7 @@ This library is an ad hoc code customization used in my private/work projects th
 | 406 | Exception.NotAcceptableException | Response.NotAcceptable | available |
 | 408 | Exception.RequestTimeoutException | Response.RequestTimeout | available |
 | 409 | Exception.ConflictException | Response.Conflict | available |
-| 422 | Exception.UnprocessableEntityException | Response.UnprocessableEntity | coming soon |
+| 422 | Exception.UnprocessableEntityException | Response.UnprocessableEntity | available |
 | 500 | Exception.InternalServerErrorException | Response.InternalServerError | coming soon |
 | 501 | Exception.NotImplementedException | Response.NotImplemented | coming soon |
 | 502 | Exception.BadGatewayException | Response.BadGateway | coming soon |
