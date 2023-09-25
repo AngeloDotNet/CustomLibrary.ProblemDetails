@@ -1,4 +1,4 @@
-﻿namespace CustomLibrary.ProblemDetails.Response;
+﻿namespace CustomLibrary.ProblemDetails;
 
 public class Confirm
 {

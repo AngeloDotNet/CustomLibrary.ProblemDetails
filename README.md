@@ -4,61 +4,31 @@ Collection of tools related to problem management (exceptions) that can be gener
 
 This library is an ad hoc code customization used in my private/work projects thus avoiding the duplication of repetitive code.
 
-## Configuration in ConfigureServices in Startup.cs
+## How to use ?
 
-```csharp
-  services.AddProblemDetails();
-```
+A full example is available in the CustomLibrary.ProblemDetails.Sample folder or click [here]().
 
-## Configuration in Configure in Startup.cs
+>**Note:** For correct operation it is necessary to add ***services.AddProblemDetails();*** and ***app.UseProblemDetails();*** to the Program class or in the Startup class
 
-```csharp
-  app.UseProblemDetails();
-```
+## List of Exception Responses
 
-## Example of use
-
-```csharp
-  [HttpGet("{id}")]
-  public async Task<IActionResult> GetPerson(Guid id)
-  {
-    try
-    {
-      var person = await myService.GetItemAsync(id);
-
-      if (person == null)
-      {
-        throw new CustomLibrary.ProblemDetails.Exception.NotFoundException($"Person with id {id} not found");
-      }
-
-      return Ok(new CustomLibrary.ProblemDetails.Response.Confirm(person));
-    }
-    catch (NotFoundException exc)
-    {
-      return CustomLibrary.ProblemDetails.Response.NotFound(HttpContext, exc);
-    }
-  }
-```
-
-# List of Exception Responses
-
-| Status Codes | Exception | Exception Response | |
-| --- | --- | --- | --- |
-| 304 | Exception.NotModifiedException | Response.NotModified | available |
-| 400 | Exception.BadRequestException | Response.BadRequest | available |
-| 401 | Exception.UnauthorizedException | Response.Unauthorized | available |
-| 403 | Exception.ForbiddenException | Response.Forbidden | available |
-| 404 | Exception.NotFoundException | Response.NotFound | available |
-| 405 | Exception.NotAllowedException | Response.MethodNotAllowed | available |
-| 406 | Exception.NotAcceptableException | Response.NotAcceptable | available |
-| 408 | Exception.RequestTimeoutException | Response.RequestTimeout | available |
-| 409 | Exception.ConflictException | Response.Conflict | available |
-| 422 | Exception.UnprocessableEntityException | Response.UnprocessableEntity | available |
-| 500 | Exception.InternalServerErrorException | Response.InternalServerError | coming soon |
-| 501 | Exception.NotImplementedException | Response.NotImplemented | coming soon |
-| 502 | Exception.BadGatewayException | Response.BadGateway | coming soon |
-| 503 | Exception.ServiceUnavailableException | Response.ServiceUnavailable | coming soon |
-| 504 | Exception.GatewayTimeoutException | Response.GatewayTimeout | coming soon |
+| Status Codes | Exception | Status |
+| --- | --- | --- |
+| 304 | NotModifiedException | available |
+| 400 | BadRequestException | available |
+| 401 | UnauthorizedException | available |
+| 403 | ForbiddenException | available |
+| 404 | NotFoundException | available |
+| 405 | NotAllowedException | available |
+| 406 | NotAcceptableException | available |
+| 408 | RequestTimeoutException | available |
+| 409 | ConflictException | available |
+| 422 | UnprocessableEntityException | available |
+| 500 | InternalServerErrorException | available |
+| 501 | NotImplementedException | coming soon |
+| 502 | BadGatewayException | coming soon |
+| 503 | ServiceUnavailableException | coming soon |
+| 504 | GatewayTimeoutException | coming soon |
 
 ## Contributing
 
