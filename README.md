@@ -6,7 +6,7 @@ This library is an ad hoc code customization used in my private/work projects th
 
 ## How to use ?
 
-A full example is available in the CustomLibrary.ProblemDetails.Sample folder or click [here]().
+A full example is available in the CustomLibrary.ProblemDetails.Sample folder or click [here](https://github.com/AngeloDotNet/CustomLibrary.ProblemDetails/blob/main/src/CustomLibrary.ProblemDetails.Sample).
 
 >**Note:** For correct operation it is necessary to add ***services.AddProblemDetails();*** and ***app.UseProblemDetails();*** to the Program class or in the Startup class
 
