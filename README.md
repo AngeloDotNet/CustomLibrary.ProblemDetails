@@ -25,7 +25,7 @@ A full example is available in the CustomLibrary.ProblemDetails.Sample folder or
 | 409 | ConflictException | available |
 | 422 | UnprocessableEntityException | available |
 | 500 | InternalServerErrorException | available |
-| 501 | NotImplementedException | coming soon |
+| 501 | NotImplementedException | available |
 | 502 | BadGatewayException | coming soon |
 | 503 | ServiceUnavailableException | coming soon |
 | 504 | GatewayTimeoutException | coming soon |

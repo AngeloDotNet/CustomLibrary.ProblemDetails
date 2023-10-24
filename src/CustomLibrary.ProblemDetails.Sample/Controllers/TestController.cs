@@ -165,4 +165,18 @@ public class TestController : ControllerBase
             return ResponseException.InternalServerError(HttpContext, exc);
         }
     }
+
+    [HttpGet("NotImplemented")]
+    public async Task<IActionResult> GetExceptionNotImplementedAsync()
+    {
+        try
+        {
+            await Task.Delay(500);
+            throw new Exception.NotImplementedException("Not Implemented");
+        }
+        catch (Exception.NotImplementedException exc)
+        {
+            return ResponseException.NotImplemented(HttpContext, exc);
+        }
+    }
 }
