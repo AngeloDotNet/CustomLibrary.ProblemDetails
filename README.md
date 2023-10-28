@@ -26,7 +26,7 @@ A full example is available in the CustomLibrary.ProblemDetails.Sample folder or
 | 422 | UnprocessableEntityException | available |
 | 500 | InternalServerErrorException | available |
 | 501 | NotImplementedException | available |
-| 502 | BadGatewayException | coming soon |
+| 502 | BadGatewayException | available |
 | 503 | ServiceUnavailableException | coming soon |
 | 504 | GatewayTimeoutException | coming soon |
 
