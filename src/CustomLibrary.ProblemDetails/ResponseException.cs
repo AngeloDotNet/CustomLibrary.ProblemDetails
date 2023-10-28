@@ -337,4 +337,32 @@ public static class ResponseException
 
         return result;
     }
+
+    public static ObjectResult BadGateway(HttpContext httpContext, System.Exception exc, List<string> validationError = null)
+    {
+        var statusCode = StatusCodes.Status502BadGateway;
+        var problemDetails = new CustomProblemDetails
+        {
+            Status = statusCode,
+            Detail = exc.Message,
+            Type = $"https://httpstatuses.com/{statusCode}",
+            Instance = httpContext.Request.Path,
+            Title = "BadGateway"
+        };
+
+        problemDetails.Extensions.Add("traceId", Activity.Current?.Id ?? httpContext.TraceIdentifier);
+        //problemDetails.Extensions.Add("errors", exc.Message);
+
+        if (validationError?.Any() ?? false)
+        {
+            problemDetails.Extensions.Add("errors", validationError);
+        }
+
+        var result = new ObjectResult(problemDetails)
+        {
+            StatusCode = statusCode
+        };
+
+        return result;
+    }
 }
