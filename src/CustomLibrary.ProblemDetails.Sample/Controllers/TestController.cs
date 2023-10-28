@@ -179,4 +179,18 @@ public class TestController : ControllerBase
             return ResponseException.NotImplemented(HttpContext, exc);
         }
     }
+
+    [HttpGet("BadGateway")]
+    public async Task<IActionResult> GetExceptionBadGatewayAsync()
+    {
+        try
+        {
+            await Task.Delay(500);
+            throw new Exception.BadGatewayException("Bad Gateway");
+        }
+        catch (Exception.BadGatewayException exc)
+        {
+            return ResponseException.BadGateway(HttpContext, exc);
+        }
+    }
 }
