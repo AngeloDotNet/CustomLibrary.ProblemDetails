@@ -1,7 +1,4 @@
-﻿using System.Net.Mime;
-using Microsoft.AspNetCore.Mvc;
-
-namespace CustomLibrary.ProblemDetails.Sample.Controllers;
+﻿namespace CustomLibrary.ProblemDetails.Sample.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -191,6 +188,20 @@ public class TestController : ControllerBase
         catch (Exception.BadGatewayException exc)
         {
             return ResponseException.BadGateway(HttpContext, exc);
+        }
+    }
+
+    [HttpGet("ServiceUnavailable")]
+    public async Task<IActionResult> GetExceptionServiceUnavailableAsync()
+    {
+        try
+        {
+            await Task.Delay(500);
+            throw new Exception.ServiceUnavailableException("Service Unavailable");
+        }
+        catch (Exception.ServiceUnavailableException exc)
+        {
+            return ResponseException.ServiceUnavailable(HttpContext, exc);
         }
     }
 }
