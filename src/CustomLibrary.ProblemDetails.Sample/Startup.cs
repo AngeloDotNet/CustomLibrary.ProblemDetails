@@ -1,8 +1,4 @@
-﻿using Hellang.Middleware.ProblemDetails;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.OpenApi.Models;
-
-namespace CustomLibrary.ProblemDetails.Sample;
+﻿namespace CustomLibrary.ProblemDetails.Sample;
 
 public class Startup
 {
