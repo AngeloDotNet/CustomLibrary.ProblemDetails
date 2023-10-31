@@ -163,7 +163,7 @@ public class TestController : ControllerBase
         }
     }
 
-    [HttpGet("NotImplemented")]
+    [HttpGet("NotImplemented-Exception")]
     public async Task<IActionResult> GetExceptionNotImplementedAsync()
     {
         try
@@ -177,7 +177,7 @@ public class TestController : ControllerBase
         }
     }
 
-    [HttpGet("BadGateway")]
+    [HttpGet("BadGateway-Exception")]
     public async Task<IActionResult> GetExceptionBadGatewayAsync()
     {
         try
@@ -191,7 +191,7 @@ public class TestController : ControllerBase
         }
     }
 
-    [HttpGet("ServiceUnavailable")]
+    [HttpGet("ServiceUnavailable-Exception")]
     public async Task<IActionResult> GetExceptionServiceUnavailableAsync()
     {
         try
@@ -202,6 +202,20 @@ public class TestController : ControllerBase
         catch (Exception.ServiceUnavailableException exc)
         {
             return ResponseException.ServiceUnavailable(HttpContext, exc);
+        }
+    }
+
+    [HttpGet("GatewayTimeout-Exception")]
+    public async Task<IActionResult> GetExceptionGatewayTimeoutAsync()
+    {
+        try
+        {
+            await Task.Delay(500);
+            throw new Exception.GatewayTimeoutException("Gateway Timeout");
+        }
+        catch (Exception.GatewayTimeoutException exc)
+        {
+            return ResponseException.GatewayTimeout(HttpContext, exc);
         }
     }
 }
