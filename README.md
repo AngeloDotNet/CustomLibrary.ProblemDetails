@@ -4,6 +4,14 @@ Collection of tools related to problem management (exceptions) that can be gener
 
 This library is an ad hoc code customization used in my private/work projects thus avoiding the duplication of repetitive code.
 
+## .NET SDK compatibility
+
+| .NET SDK | Supported |
+| --- | --- |
+| 6.0 | Yes |
+| 7.0 | No |
+| 8.0 | Yes |
+
 ## How to use ?
 
 A full example is available in the CustomLibrary.ProblemDetails.Sample folder or click [here](https://github.com/AngeloDotNet/CustomLibrary.ProblemDetails/blob/main/src/CustomLibrary.ProblemDetails.Sample).
@@ -12,23 +20,23 @@ A full example is available in the CustomLibrary.ProblemDetails.Sample folder or
 
 ## List of Exception Responses
 
-| Status Codes | Exception | Status |
-| --- | --- | --- |
-| 304 | NotModifiedException | available |
-| 400 | BadRequestException | available |
-| 401 | UnauthorizedException | available |
-| 403 | ForbiddenException | available |
-| 404 | NotFoundException | available |
-| 405 | NotAllowedException | available |
-| 406 | NotAcceptableException | available |
-| 408 | RequestTimeoutException | available |
-| 409 | ConflictException | available |
-| 422 | UnprocessableEntityException | available |
-| 500 | InternalServerErrorException | available |
-| 501 | NotImplementedException | available |
-| 502 | BadGatewayException | available |
-| 503 | ServiceUnavailableException | available |
-| 504 | GatewayTimeoutException | available |
+| Status Codes | Exception |
+| --- | --- |
+| 304 | NotModifiedException |
+| 400 | BadRequestException |
+| 401 | UnauthorizedException |
+| 403 | ForbiddenException |
+| 404 | NotFoundException |
+| 405 | NotAllowedException |
+| 406 | NotAcceptableException |
+| 408 | RequestTimeoutException |
+| 409 | ConflictException |
+| 422 | UnprocessableEntityException |
+| 500 | InternalServerErrorException |
+| 501 | NotImplementedException |
+| 502 | BadGatewayException |
+| 503 | ServiceUnavailableException |
+| 504 | GatewayTimeoutException |
 
 ## Contributing
 
