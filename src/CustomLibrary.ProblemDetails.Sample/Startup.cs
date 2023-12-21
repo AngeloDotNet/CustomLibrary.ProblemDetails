@@ -18,7 +18,7 @@ public class Startup
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Sample",
+                    Title = "Sample .NET 6",
                     Version = "v1",
                 });
             });
@@ -26,7 +26,7 @@ public class Startup
         services.AddProblemDetails();
         services.AddCors(options =>
         {
-            options.AddPolicy("Sample", policy =>
+            options.AddPolicy("Sample .NET 6", policy =>
             {
                 policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
             });
@@ -41,7 +41,7 @@ public class Startup
         IWebHostEnvironment env = app.Environment;
 
         app.UseProblemDetails();
-        app.UseCors("Sample");
+        app.UseCors("Sample .NET 6");
 
         app.UseSwagger();
         app.UseSwaggerUI(options =>
