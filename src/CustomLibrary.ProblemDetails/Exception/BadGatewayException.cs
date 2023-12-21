@@ -1,4 +1,5 @@
 ﻿namespace CustomLibrary.ProblemDetails.Exception;
+
 public class BadGatewayException : System.Exception
 {
     public BadGatewayException()
